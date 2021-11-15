@@ -59,6 +59,17 @@ body {
    width: 100%;
    text-align: center;
    border-bottom: 1px solid salmon;
+   display: flex;
+   justify-content: center;
+}
+.header__logo {
+   flex: 0 0 200px;
+   height: 100%;
+}
+.header__logo img {
+   max-width: 100%;
+   border-radius: 50%;
+   object-fit: cover;
 }
 .content {
    padding: 0 10px;
