@@ -1,2 +1,2 @@
 'use strict'
-let mainContent = document.querySelector('body');
+// solution tasks
