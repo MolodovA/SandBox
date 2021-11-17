@@ -12,3 +12,7 @@ let greet = () => 'hello world!'
 
 // Implement a function which multiplies two numbers.
 let multiply = (a, b) => a * b;
+
+//==============================================================
+// Implement a function which convert the given boolean value into its string representation
+let booleanToString = (b) => b ? 'true' : 'false'
