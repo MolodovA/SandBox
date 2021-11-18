@@ -45,3 +45,13 @@ let b = 8;
 [a, b] = [b, a]
 
 console.log(a, b);
+
+// Write a function that takes an integer as input, and returns the number of bits that are equal to one in the binary representation of that number. You can guarantee that input is non-negative.
+function countBits(num) {
+   let newArr = num.toString(2).split('').map(Number);
+   let count = 0;
+   for (let i = 0; i < newArr.length; i++) {
+      count += newArr[i];
+   }
+   return count;
+}
