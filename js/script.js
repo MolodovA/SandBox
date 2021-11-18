@@ -40,7 +40,8 @@ const moveZeros = function (arr) {
 }
 //==================================================================================
 // Use destructuring assignment to swap the values of a and b so that a receives the value stored in b, and b receives the value stored in a.Use destructuring assignment to swap the values of a and b so that a receives the value stored in b, and b receives the value stored in a.
-let [a, b] = [6, 8]
-
+let a = 6;
+let b = 8;
 [a, b] = [b, a]
 
+console.log(a, b);
