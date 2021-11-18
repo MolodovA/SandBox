@@ -21,3 +21,20 @@ let booleanToString = (b) => b ? 'true' : 'false'
 // Build a function that takes in two arguments (salary, bonus). Salary will be an integer, and bonus a boolean.
 // If bonus is true, the salary should be multiplied by 10. If bonus is false, the fatcat did not make enough money and must receive only his stated salary.
 const bonusTime = (salary, bonus) => bonus ? '£' + salary * 10 : '£' + salary
+
+// Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+const moveZeros = function (arr) {
+   let zero = [];
+   let remain = []
+   let joint = []
+   for (i = 0; i < arr.length; i++) {
+      if (arr[i] === 0) {
+         zero.push(arr[i])
+      }
+      else {
+         remain.push(arr[i])
+      }
+
+   }
+   return joint = remain.concat(zero)
+}
