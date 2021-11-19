@@ -129,8 +129,23 @@ body {
    bottom: 0;
    left: 0;
    width: 10%;
+   animation: run 3s 0s infinite linear;
 }
 .incubator__man img {
    max-width: 100%;
    object-fit: cover;
+}
+@keyframes run {
+   0% {
+      bottom: 0;
+      left: 0;
+   }
+   50% {
+      bottom: 8%;
+      left: 10%;
+   }
+   100% {
+      bottom: 25%;
+      left: 35%;
+   }
 }
