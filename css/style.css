@@ -122,7 +122,16 @@ body {
 .incubator__container {
    position: relative;
 }
-.incubator__house {
+.incubator__logo {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-150%, 70%);
+   max-width: 100px;
+}
+.incubator__logo img {
+   max-width: 100%;
+   border-radius: 40px;
 }
 .incubator__man {
    position: absolute;
