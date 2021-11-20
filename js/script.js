@@ -60,17 +60,6 @@ function countBits(num) {
 // The cockroach is one of the fastest insects. Write a function which takes its speed in km per hour and returns it in cm per second, rounded down to the integer (= floored).
 const cockroachSpeed = (s) => Math.floor(s * (100 / 3.6))
 
-// Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old).
-function twiceAsOld(dadYearsOld, sonYearsOld) {
-   if (sonYearsOld === 0) {
-      return dadYearsOld;
-   }
-   else if (dadYearsOld / sonYearsOld === 2) {
-      return 0
-   }
-   else {
-      let n = (dadYearsOld - 2 * sonYearsOld);
-      return n
-   }
-}
 
+//We need a function that can transform a string into a number. What ways of achieving this do you know?
+const stringToNumber = (str) => +str;
