@@ -136,9 +136,9 @@ body {
 .incubator__man {
    position: absolute;
    bottom: 0;
-   left: 0;
+   left: -10%;
    width: 10%;
-   animation: run 3s 0s infinite linear;
+   animation: run 3s 0s linear;
 }
 .incubator__man img {
    max-width: 100%;
