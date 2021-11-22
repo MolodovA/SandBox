@@ -63,3 +63,11 @@ const cockroachSpeed = (s) => Math.floor(s * (100 / 3.6))
 
 //We need a function that can transform a string into a number. What ways of achieving this do you know?
 const stringToNumber = (str) => +str;
+
+// For correct answer program should return int from 0 to 9.
+// Assume test input string always valid and may look like "1 year old" or "5 years old", etc.. The first char is number only.
+function getAge(inputString) {
+
+   let year = inputString[0];
+   return +year;
+}
