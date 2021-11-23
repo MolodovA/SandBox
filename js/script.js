@@ -131,3 +131,20 @@ function getSize(w, h, d) {
    arr.push(area, volume);
    return arr;
 }
+
+// Given a year, return the century it is in.
+const century = (year) => {
+   if (year <= 0)
+      return 0
+   else if (year <= 100) {
+      return 1;
+   }
+   else if (year % 100 == 0) {
+      return year / 100 << " century";
+   }
+   else {
+      return year / 100 + 1 << " century";
+   }
+
+
+}
