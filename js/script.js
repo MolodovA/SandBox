@@ -115,3 +115,10 @@ function getAge(inputString) {
 // O is misinterpreted as 0
 // I is misinterpreted as 1
 const correct = (str) => str.replace(/0/g, 'O').replace(/1/g, 'I').replace(/5/g, 'S');
+
+// Bob needs a fast way to calculate the volume of a cuboid with three values: length, width and the height of the cuboid. Write a function to help Bob with this calculation.
+class Kata {
+   static getVolumeOfCuboid(length, width, height) {
+      return length * width * height
+   }
+}
