@@ -153,3 +153,20 @@ const century = (year) => {
 function superSize(num) {
    return parseInt(num.toString().split('').sort((a, b) => b - a).join(''));
 }
+
+function validParentheses(parens) {
+   for (let i = 0; i < parens.length; i++) {
+      let newArr = [];
+      if (parens[i] === '(') {
+         newArr.push(parens[i]);
+      } else if (parens[i] === ')') {
+         newArr.push(parens[i]);
+      }
+
+
+
+
+   }
+   return false;
+}
+validParentheses('()()(()))')
