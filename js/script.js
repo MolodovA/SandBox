@@ -146,5 +146,10 @@ const century = (year) => {
       return year / 100 + 1 << " century";
    }
 
+}
 
+// Write a function that rearranges an integer into its largest possible value.
+// Example (Input --> Output)
+function superSize(num) {
+   return parseInt(num.toString().split('').sort((a, b) => b - a).join(''));
 }
