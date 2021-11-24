@@ -154,19 +154,19 @@ function superSize(num) {
    return parseInt(num.toString().split('').sort((a, b) => b - a).join(''));
 }
 
+// Write a function that takes a string of parentheses, and determines if the order of the parentheses is valid. The function should return true if the string is valid, and false if it's invalid.
 function validParentheses(parens) {
+   let opening = ['(']
+   let closing = [')']
+   let arr = []
+
    for (let i = 0; i < parens.length; i++) {
-      let newArr = [];
-      if (parens[i] === '(') {
-         newArr.push(parens[i]);
-      } else if (parens[i] === ')') {
-         newArr.push(parens[i]);
-      }
-
-
-
-
-   }
-   return false;
+      if (opening.includes(parens[i])) {
+         arr.push(parens[i])
+      } else
+         if (closing.indexOf(parens[i]) === opening.indexOf(arr[arr.length - 1])) {
+            arr.pop()
+         } else return false
+   } return arr.length === 0;
 }
-validParentheses('()()(()))')
+
