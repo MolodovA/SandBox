@@ -169,4 +169,5 @@ function validParentheses(parens) {
          } else return false
    } return arr.length === 0;
 }
-
+//Very simple, given an integer or a floating-point number, find its opposite.
+const opposite = (n) => n * -1
