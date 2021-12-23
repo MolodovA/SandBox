@@ -209,6 +209,13 @@ let usersArray = [
    { id: 41, name: 'Alexa' },
    { id: 1, name: 'Aleksandr' },
 ]
+let usersArray2 = [
+   { id: 101, name: 'Alex' },
+   { id: 22, name: 'Alsu' },
+   { id: 34, name: 'Alexis' },
+   { id: 41, name: 'Alexa' },
+   { id: 1, name: 'Aleksandr' },
+]
 console.log(usersArray.filter(f => f.id !== 34));
 function myFilter(a) {
    const newFilter = [];
@@ -243,3 +250,4 @@ function myFind() {
 }
 myFind(usersArray)
 //=======================================================================//
+console.log(usersArray.concat(usersArray2));
