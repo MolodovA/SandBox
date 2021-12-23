@@ -204,3 +204,25 @@ function finalGrade(exam, projects) {
 //=======================================================================//
 
 
+
+
+let usersArray = [
+   { id: 101, name: 'Alex' },
+   { id: 22, name: 'Alsu' },
+   { id: 34, name: 'Alexis' },
+   { id: 41, name: 'Alexa' },
+   { id: 1, name: 'Aleksandr' },
+]
+console.log(usersArray.filter(f => f.id !== 34));
+
+function myFilter(a) {
+   const newFilter = [];
+   usersArray.forEach(e => {
+      if (e.id !== 34) {
+         newFilter.push(e)
+      }
+   });
+   console.log(newFilter);
+}
+myFilter(usersArray);
+//===========================================
