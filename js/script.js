@@ -231,3 +231,15 @@ function myMap() {
 }
 myMap(usersArray)
 //=======================================================================//
+console.log(usersArray.find(u => u.id === 1));
+
+function myFind() {
+   let newFind;
+   usersArray.forEach(u => {
+      if (u.id === 1)
+         newFind = u;
+   })
+   console.log(newFind);
+}
+myFind(usersArray)
+//=======================================================================//
