@@ -202,10 +202,6 @@ function finalGrade(exam, projects) {
 }
 
 //=======================================================================//
-
-
-
-
 let usersArray = [
    { id: 101, name: 'Alex' },
    { id: 22, name: 'Alsu' },
@@ -214,7 +210,6 @@ let usersArray = [
    { id: 1, name: 'Aleksandr' },
 ]
 console.log(usersArray.filter(f => f.id !== 34));
-
 function myFilter(a) {
    const newFilter = [];
    usersArray.forEach(e => {
@@ -225,4 +220,14 @@ function myFilter(a) {
    console.log(newFilter);
 }
 myFilter(usersArray);
-//===========================================
+//=======================================================================//
+console.log(usersArray.map(u => u.name));
+function myMap() {
+   const newMap = []
+   usersArray.forEach(u => {
+      newMap.push(u.name)
+   })
+   console.log(newMap);
+}
+myMap(usersArray)
+//=======================================================================//
