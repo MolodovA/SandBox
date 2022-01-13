@@ -324,7 +324,7 @@ countSheeps([true, true, true, false,
    true, true, true, true,
    false, false, true, true]);
 
-
+// return sum positive numbers from arr 
 function positiveSum(arr) {
    if (arr) {
       let positiveActive = arr.filter(f => f > 0);
@@ -334,3 +334,39 @@ function positiveSum(arr) {
    return 0
 }
 positiveSum([1, -2, 3, 4, 5])
+
+//Simple, remove the spaces from the string, then return the resultant string.
+function noSpace(x) {
+   return x.replace(/\s/g, '')
+}
+
+
+//We need a function that counts the number of sheep present in the array
+// (true means present).
+
+let array1 = [true, true, true, false,
+   true, true, true, true,
+   true, false, true, false,
+   true, false, false, true,
+   true, true, true, true,
+   false, false, true, true];
+function countSheeps(a) {
+   let newArray = a.filter(f => f)
+   return newArray.length
+}
+countSheeps(array1)
+
+//Given a string of digits, you should replace any digit below 5 with '0' and any //digit 5 and above with '1'. Return the resulting string.
+function fakeBin(x) {
+   let newStringNumbers = x.split([])
+   for (let i = 0; i < newStringNumbers.length; i++) {
+      if (newStringNumbers[i] >= 5) {
+         newStringNumbers[i] = 1
+      }
+      else {
+         newStringNumbers[i] = 0
+      }
+   }
+   return newStringNumbers.join('');
+}
+fakeBin(('45385593107843568'))
