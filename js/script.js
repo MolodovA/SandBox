@@ -370,3 +370,16 @@ function fakeBin(x) {
    return newStringNumbers.join('');
 }
 fakeBin(('45385593107843568'))
+// best solution
+//fakeBin = x => x.split('').map(e => e < 5 ? 0 : 1).join('');
+
+
+//Ben has a very simple idea to make some profit: he buys something and sells it again. Of course, this wouldn't give him any profit at all if he was simply to buy and sell it at the same price. Instead, he's going to buy it for the lowest possible price and sell it at the highest.
+
+function minMax(arr) {
+   let min = Math.min.apply(null, arr)
+   let max = Math.max.apply(null, arr)
+   let result = [min, max]
+   return result;
+}
+minMax([1, 2, 3, 4, 5]);
