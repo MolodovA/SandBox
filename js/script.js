@@ -208,6 +208,7 @@ let usersArray = [
    { id: 34, name: 'Alexis' },
    { id: 41, name: 'Alexa' },
    { id: 1, name: 'Aleksandr' },
+   { id: 1, name: 'Aleksandr' },
 ]
 let usersArray2 = [
    { id: 101, name: 'Alex' },
@@ -216,7 +217,8 @@ let usersArray2 = [
    { id: 41, name: 'Alexa' },
    { id: 1, name: 'Aleksandr' },
 ]
-console.log(usersArray.filter(f => f.id !== 34));
+//console.log(usersArray.filter(f => f.id === 1));
+
 function myFilter(a) {
    const newFilter = [];
    usersArray.forEach(e => {
@@ -224,11 +226,11 @@ function myFilter(a) {
          newFilter.push(e)
       }
    });
-   console.log(newFilter);
+   // console.log(newFilter);
 }
 myFilter(usersArray);
 //=======================================================================//
-console.log(usersArray.map(u => u.name));
+//console.log(usersArray.map(u => u.name));
 function myMap() {
    const newMap = []
    usersArray.forEach(u => {
@@ -238,9 +240,9 @@ function myMap() {
 }
 myMap(usersArray)
 //=======================================================================//
-console.log(usersArray.find(u => u.id === 1));
+//console.log(usersArray.find(u => u.id === 1));
 
-function myFind() {
+/*function myFind() {
    let newFind;
    usersArray.forEach(u => {
       if (u.id === 1)
@@ -248,6 +250,87 @@ function myFind() {
    })
    console.log(newFind);
 }
-myFind(usersArray)
+myFind(usersArray)*/
 //=======================================================================//
-console.log(usersArray.concat(usersArray2));
+//console.log(usersArray.concat(usersArray2));
+
+
+
+let numbers = [1, 2, 3, 4, 5, 67]
+console.log(numbers.reduce(function (previousValue, item, index, array) {
+   return item + previousValue;
+}, 0));
+
+
+let users = [
+   {
+      name: 'Alex',
+      age: 34,
+      scroder: 45,
+   }, {
+      name: 'Alexa',
+      age: 41,
+      scroder: 65,
+   }, {
+      name: 'Alexis',
+      age: 38,
+      scroder: 55,
+   },
+]
+
+console.log(users.find(s => s.age === 11));
+
+function myFind() {
+   let newFind;
+   users.forEach(u => {
+      if (u.age === 1)
+         newFind = u;
+   })
+   console.log(newFind);
+}
+myFind(users)
+
+
+function howMuchILoveYou(nbPetals) {
+   let array = ['a little', 'passionately', 'madly', 'a lot', , , 'not at all', 'I love you']
+   for (let i = 0; i < array.length; i++) {
+      console.log(i);
+      if (nbPetals === i) {
+         return console.log(array[i]);
+      }
+   }
+}
+howMuchILoveYou(3)
+
+
+function countSheeps(a) {
+   const newFilter = [];
+   let count;
+   a.forEach(e => {
+      if (e) {
+         newFilter.push(e)
+         count = newFilter.length
+
+      }
+   });
+
+   return console.log(`${count} ,"There are 17 sheeps in total"`);
+}
+
+countSheeps([true, true, true, false,
+   true, true, true, true,
+   true, false, true, false,
+   true, false, false, true,
+   true, true, true, true,
+   false, false, true, true]);
+
+
+function positiveSum(arr) {
+   if (arr) {
+      let positiveActive = arr.filter(f => f > 0);
+      let result = positiveActive.reduce((a, b) => a + b)
+      return result;
+   }
+   return 0
+}
+positiveSum([1, -2, 3, 4, 5])
