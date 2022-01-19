@@ -383,3 +383,21 @@ function minMax(arr) {
    return result;
 }
 minMax([1, 2, 3, 4, 5]);
+// best solution
+//const minMax = arr => [ Math.min(...arr), Math.max(...arr) ];
+
+
+const cannonsReady = (g) => {
+
+   let count;
+   for (let pirat in g) {
+      console.log(g[pirat]);
+
+
+
+
+
+   }
+
+}
+cannonsReady({ 'Mike': 'aye', 'Joe': 'aye', 'Johnson': 'aye', 'Peter': 'aye' })
