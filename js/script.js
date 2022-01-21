@@ -426,3 +426,15 @@ function basicOp(operation, value1, value2) {
    }
 }
 console.log(basicOp('-', 4, 7))
+
+
+
+
+function abbrevName(name) {
+   return name
+      .replace(/\b(\w)\w+/g, '$1')
+      .replace(/\s/g, '.')
+      .toUpperCase();
+}
+
+abbrevName("Sam Harris")
