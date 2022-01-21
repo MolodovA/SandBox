@@ -401,3 +401,19 @@ const cannonsReady = (g) => {
 
 }
 cannonsReady({ 'Mike': 'aye', 'Joe': 'aye', 'Johnson': 'aye', 'Peter': 'aye' })
+
+
+function squareSum(numbers) {
+   let finalyResult = numbers.reduce((a, b) => {
+      return a + b ** 2
+   }, 0)
+   return finalyResult
+}
+
+squareSum([0, 3, 4, 5])
+
+
+//function basicOp(operation, value1, value2)
+////{
+  // Code
+//}
