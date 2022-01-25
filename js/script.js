@@ -438,3 +438,13 @@ function abbrevName(name) {
 }
 
 abbrevName("Sam Harris")
+
+
+
+
+
+
+
+const getReveresArray = n => Array.from(String(n), Number).reverse();
+
+getReveresArray(123456789)
