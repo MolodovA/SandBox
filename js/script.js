@@ -442,9 +442,54 @@ abbrevName("Sam Harris")
 
 
 
+function sumOfMinimums(arr) {
+   let sum = arr.map(m => Math.min(...m)).reduce((a, b) => a + b)
 
+}
+sumOfMinimums([[1, 2, 3, 4, 5]
+   , [5, 6, 7, 8, 9]
+   , [20, 21, 34, 56, 100]
+])
 
 
 const getReveresArray = n => Array.from(String(n), Number).reverse();
 
 getReveresArray(123456789)
+
+let obj = {
+   name: "Her",
+   age: 5,
+   location: {
+      city: "Uglovka",
+      cuntry: 'Russia'
+   }
+}
+let obj2 = obj;
+obj2.age = 7
+let obj3 = { ...obj, location: { ...obj.location } }
+obj3.location.cuntry = 'Spain'
+console.log(obj);
+
+console.log(Object.keys(obj3).filter(f => f === 'name'));
+console.log(Object.values(obj3));
+
+const salary = (arr) => arr.reduce((a, b) => a + b)
+
+
+
+console.log(salary([1200, 2950, 3600, 1920, 2700, 2390, 2400, 1600]));
+
+
+
+
+// 5. Функция getSquarePositiveIntegers принимает параметром массив чисел и возвращает новый массив. 
+// Новый массив состоит из квадратов целых положительных чисел, котрые являются элементами исходгого массива.
+// Исходный массив не мутирует.
+
+
+export function getSquarePositiveIntegers(array) {
+
+   return [...array.filter(m => m % 2 === 0 && m > 0).map(m => m ** 2)]
+}
+
+getSquarePositiveIntegers([4, 5.6, -9.8, 3.14, 10, 6, 8.34, -2])
