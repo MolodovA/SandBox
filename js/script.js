@@ -486,10 +486,23 @@ console.log(salary([1200, 2950, 3600, 1920, 2700, 2390, 2400, 1600]));
 // Новый массив состоит из квадратов целых положительных чисел, котрые являются элементами исходгого массива.
 // Исходный массив не мутирует.
 
-
-export function getSquarePositiveIntegers(array) {
+function getSquarePositiveIntegers(array) {
 
    return [...array.filter(m => m % 2 === 0 && m > 0).map(m => m ** 2)]
 }
 
 getSquarePositiveIntegers([4, 5.6, -9.8, 3.14, 10, 6, 8.34, -2])
+
+
+// 4. Функция isEvenIndexSumGreater принимает  параметром массив чисел.
+// Если сумма чисел с чётными ИНДЕКСАМИ!!! (0 как чётный индекс) больше
+// суммы чисел с нечётными ИНДЕКСАМИ!!!, то функция возвращает true.
+// В противном случае - false.
+const isEvenIndexSumGreater = (arr) => {
+   return arr.filter((f, index) => index % 2 === 0).reduce((a, b) => a + b)
+      > arr.filter((f, index) => index % 2 !== 0).reduce((a, b) => a + b)
+      ? true : false
+
+
+}
+isEvenIndexSumGreater([1, 100, 2, 200])
