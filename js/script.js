@@ -506,3 +506,38 @@ const isEvenIndexSumGreater = (arr) => {
 
 }
 isEvenIndexSumGreater([1, 100, 2, 200])
+
+
+
+function sumFirstNumbers(N) {
+   if (N === 0) {
+      return 0;
+   }
+   else if (N === 1) {
+      return 1;
+   }
+
+   return sumFirstNumbers(N - 1) + N;
+
+}
+
+console.log(sumFirstNumbers(0));
+
+
+//Функция-банкомат принимает параметром целое натуральное число (сумму).
+// Возвращает массив с наименьшим количеством купюр, которыми можно выдать эту
+// сумму. Доступны банкноты следующих номиналов:
+// const banknotes = [1000, 500, 100, 50, 20, 10, 5, 2, 1].
+// Считаем, что количество банкнот каждого номинала не ограничено
+function getBanknoteList(amountOfMoney) {
+   const banknotes = [1000, 500, 100, 50, 20, 10, 5, 2, 1]
+   const result = []
+   for (let i = 0; i < banknotes.length; i++) {
+      while (amountOfMoney - banknotes[i] >= 0) {
+         amountOfMoney -= banknotes[i];
+         result.push(banknotes[i])
+      }
+   }
+   return result;
+}
+console.log(getBanknoteList(2500));
