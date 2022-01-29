@@ -541,3 +541,21 @@ function getBanknoteList(amountOfMoney) {
    return result;
 }
 console.log(getBanknoteList(2500));
+
+
+function getCount(str) {
+   var vowelsCount = 0;
+   for (let i = 0; i < str.length; i++) {
+      if (str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'u') {
+         console.log(vowelsCount += 1);
+      }
+   }
+   return vowelsCount;
+}
+getCount("abracadabra")
+
+
+// вернить массив чисел , каждое второе число должно быть увеличено в двое
+const doubleEveryOther = a => a.map((m, i) => i % 2 !== 0 ? m * 2 : m)
+
+console.log(doubleEveryOther([1, 9, 6, 2, 12, -3]));
