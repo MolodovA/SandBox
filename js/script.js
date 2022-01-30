@@ -559,3 +559,11 @@ getCount("abracadabra")
 const doubleEveryOther = a => a.map((m, i) => i % 2 !== 0 ? m * 2 : m)
 
 console.log(doubleEveryOther([1, 9, 6, 2, 12, -3]));
+
+
+
+
+function squareDigits(num) {
+   let string = String(num).split('').map(el => el ** 2).join('')
+   return Number(string)
+}
