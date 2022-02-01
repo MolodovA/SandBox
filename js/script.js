@@ -567,3 +567,17 @@ function squareDigits(num) {
    let string = String(num).split('').map(el => el ** 2).join('')
    return Number(string)
 }
+
+
+//Build a function that returns an array of integers from n to 1 where n>0.
+const reverseSeq = n => {
+   let result = []
+   if (n > 0) {
+      for (let i = 1; i <= n; i++) {
+         result.push(i)
+      }
+   }
+   return result.reverse();
+};
+
+reverseSeq(5)
