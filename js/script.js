@@ -586,3 +586,25 @@ reverseSeq(5)
 //Вам даны lengthи widthчетырехугольника.Многоугольник может быть прямоугольным или квадратным.
 //Если это квадрат, вернуть его площадь.Если это прямоугольник, верните его периметр
 const areaOrPerimeter = (l, w) => l == w ? l * w : 2 * (l + w);
+
+
+
+function countPositivesSumNegatives(input) {
+   if (!input || input === null) {
+      return []
+   }
+   else {
+      let positiveSum = input.filter(f => f > 0).length
+      let negativeSum = input.filter(f => f < 0).reduce((a, b) => { return a + b }, 0)
+      if (!positiveSum && !negativeSum) {
+         return []
+      }
+      return [positiveSum, negativeSum]
+   }
+
+}
+
+console.log(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]))
+
+
+
