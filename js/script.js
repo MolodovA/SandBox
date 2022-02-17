@@ -616,3 +616,15 @@ function accum(s) {
       .map((ch, i) => (ch = ch.toLowerCase().repeat(i + 1)) && ch.charAt(0).toUpperCase() + ch.slice(1))
       .join('-');
 }
+
+// Для развёртывания многомерных массивов используем рекурсию, reduce и concat
+
+function flatDeep(arr, d = 1) {
+   console.log(arr);
+   return d > 0 ? arr.reduce((acc, val) => acc.concat(Array.isArray(val) ? flatDeep(val, d - 1) : val), [])
+      : arr.slice();
+
+};
+
+console.log(flatDeep([1, 2, [3, 4, [5, 6]]], Infinity))
+// [1, 2, 3, 4, 5, 6]
