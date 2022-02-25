@@ -628,3 +628,45 @@ function flatDeep(arr, d = 1) {
 
 console.log(flatDeep([1, 2, [3, 4, [5, 6]]], Infinity))
 // [1, 2, 3, 4, 5, 6]
+
+
+
+
+
+function solve(s) {
+   let arr = []
+   let arr2 = s.split('')
+   for (let i = 0; i < arr2.length; i++) {
+      switch (arr2[i]) {
+         case 'a':
+            arr = [...arr, 'a']
+         case 'e':
+            arr = [...arr, 'e']
+         case 'o':
+            arr = [...arr, 'o']
+         case 'i':
+            arr = [...arr, 'i']
+         case 'u':
+            arr = [...arr, 'u']
+            return console.log(arr);
+      }
+   }
+}
+
+solve('suoidea')
+
+
+
+function makeCounter() {
+   let n = 0;
+   return function () {
+      return ++n
+   }
+}
+const counter = makeCounter();
+console.log(counter());//1
+console.log(counter());//2
+console.log(counter()); //3
+const counter2 = makeCounter();
+console.log(counter2()); //1
+console.log(counter()); //4
