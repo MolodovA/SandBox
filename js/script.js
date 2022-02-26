@@ -1,5 +1,5 @@
 'use strict'
-// solution tasks
+/* solution tasks
 
 //Now you have to write a function that takes an argument and returns the square of it.
 function square(a) {
@@ -187,7 +187,7 @@ This function should return a number (final grade). There are four types of fina
 90, if a grade for the exam is more than 75 and if a number of completed projects is minimum 5.
 75, if a grade for the exam is more than 50 and if a number of completed projects is minimum 2.
 0, in other cases
- */
+
 
 function finalGrade(exam, projects) {
    if (exam > 90 || projects > 10) {
@@ -250,7 +250,7 @@ myMap(usersArray)
    })
    console.log(newFind);
 }
-myFind(usersArray)*/
+myFind(usersArray)
 //=======================================================================//
 //console.log(usersArray.concat(usersArray2));
 
@@ -657,16 +657,55 @@ solve('suoidea')
 
 
 
-function makeCounter() {
-   let n = 0;
-   return function () {
-      return ++n
+
+
+
+function makeCounter(count) {
+   return {
+      increase: () => ++count,
+      decrease: () => --count,
+      reset: () => count = 0,
+      set: () => count = count,
    }
 }
-const counter = makeCounter();
-console.log(counter());//1
-console.log(counter());//2
-console.log(counter()); //3
-const counter2 = makeCounter();
-console.log(counter2()); //1
-console.log(counter()); //4
+let counter = makeCounter(5)
+console.log(counter.decrease());
+console.log(counter.increase());
+console.log(counter.set());
+console.log(counter.reset());
+console.log(counter.set());
+
+
+
+//function fib(n) {
+//   if (n <= 2) return 1
+// return fib(n - 1) + fib(n - 2)
+//}
+//console.log(fib(77));
+
+ */
+/*В этой Ката вам будет дана строка, которая может содержать смешанные прописные и строчные буквы, и ваша задача состоит в том, чтобы преобразовать эту строку либо только в строчные, либо только в прописные буквы на основе:
+
+внести как можно меньше изменений.
+если строка содержит одинаковое количество прописных и строчных букв, преобразовать строку в нижний регистр. */
+function strUpAndDown(s) {
+   let strLower = ''
+   let strUpper = ''
+   let arr = s.split('')
+   arr.forEach(el => {
+      if (el.toLowerCase() === el) {
+         strLower += el
+      } else {
+         strUpper += el
+      }
+      s = strLower.length >= strUpper.length
+         ? s.toLowerCase()
+         : s.toUpperCase()
+   }
+   )
+   return s
+}
+
+
+
+console.log(strUpAndDown('CoDEeTTTe'))  
