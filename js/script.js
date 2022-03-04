@@ -708,4 +708,23 @@ function strUpAndDown(s) {
 
 
 
-console.log(strUpAndDown('CoDEeTTTe'))  
+//console.log(strUpAndDown('CoDEeTTTe'))  
+
+
+function dontGiveMeFive(start, end) {
+   let result = [];
+   for (start; start <= end; start++) {
+      if (Number.isInteger(start / 10)) {
+         result.push(start)
+         console.log(result);
+      }
+      if (!Number.isInteger(start / 5)) {
+         result.push(start)
+         console.log(result);
+      }
+
+   }
+   return result.length
+}
+
+console.log(dontGiveMeFive(4, 17)); 
