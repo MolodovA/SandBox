@@ -727,4 +727,9 @@ function dontGiveMeFive(start, end) {
    return result.length
 }
 
-console.log(dontGiveMeFive(4, 17)); 
+dontGiveMeFive(4, 70);
+
+//Given a set of numbers, return the additive inverse of each. Each positive becomes //negatives, and the negatives become positives.
+function invert(array) {
+   return array.map(el => el * -1);
+}
