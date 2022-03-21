@@ -716,11 +716,11 @@ function dontGiveMeFive(start, end) {
    for (start; start <= end; start++) {
       if (Number.isInteger(start / 10)) {
          result.push(start)
-         console.log(result);
+
       }
       if (!Number.isInteger(start / 5)) {
          result.push(start)
-         console.log(result);
+
       }
 
    }
@@ -733,3 +733,35 @@ dontGiveMeFive(4, 70);
 function invert(array) {
    return array.map(el => el * -1);
 }
+
+
+
+
+function dotCalculator2(equation) {
+   let result = equation.split(' ')
+   const operator = result.find((el, i) => i === 1)
+
+   if (operator === '+') {
+      result = result[0].length + result[2].length
+   }
+   else if (operator === '-' && result[0] > result[2]) {
+      result = result[0].length - result[2].length
+   }
+   else if (operator === '*') {
+      result = result[0].length * result[2].length
+   }
+   else if (operator === '//' && result[0] > result[2]) {
+      result = result[0].length / result[2].length
+   }
+   else {
+      return result = '';
+   }
+   let arr = [];
+   for (let i = 0; i <= result; i++) {
+      if (i > 0) {
+         arr.push(i);
+      }
+   }
+   return arr.fill('.').join('');
+}
+
