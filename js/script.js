@@ -1,4 +1,4 @@
-'use strict'
+
 /* solution tasks
 
 //Now you have to write a function that takes an argument and returns the square of it.
@@ -765,3 +765,108 @@ function dotCalculator2(equation) {
    return arr.fill('.').join('');
 }
 
+let someObj = {
+   name: 'Alex',
+   age: 23,
+}
+
+function greeting() {
+   return `My name is ${this.name}. I am ${this.age}`
+}
+
+someObj.f = greeting
+console.log(someObj.f());
+
+
+
+// реализовать счетчик counter в виде объекта со следующими методами:
+// get current count; - выводит текущее значение счетчика
+// increment; - увеличивает значение счетчика на 1
+// decrement; - уменьшает значение счетчика на 1
+// set current count; - принимает и присваивает значение счетчику
+// rest current count - устанавливает значение счетчика равным 0
+// все методы должны ссылаться на сам объект
+
+const counter = {
+   count: 4,
+   setCurrentCount(count) {
+      this.count = count
+      return this
+   },
+   getCurrentCount() {
+      this.count
+      return this
+   },
+   increment() {
+      this.count += 1
+      return this
+   },
+   decrement() {
+      this.count -= 1
+      return this
+   },
+   restCurrentCount() {
+      this.count = 0
+      return this
+   }
+}
+
+
+console.log(counter
+   .setCurrentCount(10)
+   .increment()
+   .increment()
+   .increment()
+   .decrement()
+);
+
+
+let someObjfg = {
+   name: 'Alex',
+   age: 23,
+}
+
+function greeting() {
+   return `My name is ${this.name}. I am ${this.age}`
+}
+
+someObj.greeting = greeting
+console.log(someObj.greeting())
+
+// Task 04
+// Написать функцию конструктор myFirstConstructorFunc
+// которая принимает 2 параметра name и age и возвращает объект
+// у которого будут эти свойства и метод greeting из Task 01
+
+function MyFirstConstructorFunc(name, age) {
+   this.name = name
+   this.age = age
+   this.greeting = greeting
+}
+
+
+let fuckobj = new MyFirstConstructorFunc('name', 34);
+console.log(fuckobj)
+
+// Task 05 есть 2 объекта One и Two.
+//С помощью bind и метода sayHello заставьте поздороваться объект One
+
+let one = { name: 'One' };
+let two = {
+   name: 'Two',
+   sayHello() {
+      return `Hello, my name is ${this.name}`
+   }
+};
+
+
+console.log(two.sayHello.bind(one)());
+
+
+
+// Task 06
+// создайте объект helperObj у которого есть следующие методы:
+// changeName - меняет значение у свойства name объекта на полученное значение
+// setAge - устанавливает полученное значение в свойство age объекта
+// greeting - используется функция sayHello из Task 05
+// можно использовать @ts-ignore
