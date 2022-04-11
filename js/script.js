@@ -870,3 +870,48 @@ console.log(two.sayHello.bind(one)());
 // setAge - устанавливает полученное значение в свойство age объекта
 // greeting - используется функция sayHello из Task 05
 // можно использовать @ts-ignore
+
+let helperObj = {
+   changeName(name) {
+      this.name = name
+   },
+   setAge(age) {
+      this.age = age
+   },
+   greeting: two.sayHello
+
+}
+
+// 2) Напишите функцию которая принимает первым аргументом объект One, а вторым helperObj. Данная функция
+// возвращает другую функцию которая принимает строку в качестве аргумента и устанавливает ее свойству name объекта One
+function changeObj(one, helperObj) {
+   return function (newName) {
+      return helperObj.changeName.bind(one)(newName)
+   }
+}
+
+changeObj(one, helperObj)('two')
+console.log(one);
+
+// 3) Одной строкой установить с помощью helperObj объекту Two поле age в значение 30
+
+
+helperObj.setAge.call(two, 30)
+console.log(two)
+
+
+//4) Создать метод hi у объекта One, 
+//который всегда вызывает метод greeting объекта helperObj от имени Two
+
+one.hi = helperObj.greeting.bind(two)
+
+console.log(one)
+
+
+//Напишите функцию findNeedle(), которая принимает arrayполный мусор, но содержит один"needle"
+//После того, как ваша функция найдет иглу, она должна вернуть сообщение (в виде строки), в котором говорится:
+
+function findNeedle(haystack) {
+   let indexElement = haystack.indexOf('needle', 0)
+   return `found the needle at position ${indexElement}`
+}
