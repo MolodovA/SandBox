@@ -831,7 +831,7 @@ function greeting() {
 }
 
 someObj.greeting = greeting
-console.log(someObj.greeting())
+//console.log(someObj.greeting())
 
 // Task 04
 // Написать функцию конструктор myFirstConstructorFunc
@@ -891,13 +891,13 @@ function changeObj(one, helperObj) {
 }
 
 changeObj(one, helperObj)('two')
-console.log(one);
+//console.log(one);
 
 // 3) Одной строкой установить с помощью helperObj объекту Two поле age в значение 30
 
 
 helperObj.setAge.call(two, 30)
-console.log(two)
+//console.log(two)
 
 
 //4) Создать метод hi у объекта One, 
@@ -915,3 +915,31 @@ function findNeedle(haystack) {
    let indexElement = haystack.indexOf('needle', 0)
    return `found the needle at position ${indexElement}`
 }
+
+const promise = new Promise((resolve, reject) => {
+   setTimeout(res => {
+      if (res.httpStatus === 200) {
+         console.log('good');
+      } else {
+         console.log('bad');
+      }
+   }, 2000, { httpStatus: 200, data: { userName: 'Yo', id: 'fdfer', status: 'Ok' } })
+})
+
+
+for (var index = 0; index < 10; index++) {
+   //  console.log(index)
+}
+
+function Test(name) {
+   this.name = name
+}
+
+
+
+function descendingOrder(n) {
+   return +n.toString().split('').reverse().join('')
+
+}
+console.log(descendingOrder(1021))
+
