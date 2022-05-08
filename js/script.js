@@ -941,5 +941,13 @@ function descendingOrder(n) {
    return +n.toString().split('').reverse().join('')
 
 }
-console.log(descendingOrder(1021))
+descendingOrder(1021)
 
+//In this kata you will create a function that takes a list 
+//of non-negative integers and strings and returns a new list 
+//with the strings filtered out.
+function filter_list(l) {
+   return l.filter(item => typeof item === 'number')
+}
+
+filter_list([1, 'a', 'b', 0, 15]);
