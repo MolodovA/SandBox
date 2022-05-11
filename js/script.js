@@ -38,4 +38,18 @@ function dontGiveMeFive(start, end) {
 console.log(dontGiveMeFive(4, 17));
 
 
-//
+function solution(str) {
+   if (!str) {
+      return []
+   }
+   else if (Number.isInteger(str.length / 2)) {
+      return str.match(/..?/g)
+   }
+   let newArr = str.match(/..?/g)
+   newArr[newArr.length - 1] = newArr[newArr.length - 1] + '_'
+   return newArr
+
+}
+
+solution("abcdefh");
+
