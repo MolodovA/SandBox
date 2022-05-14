@@ -50,6 +50,32 @@ function solution(str) {
    return newArr
 
 }
-
 solution("abcdefh");
+
+
+//
+function cutCancerCells(organism) {
+   let arr = organism.split('')
+   for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === 'c') arr[i] = ''
+      if (arr[i] === 'C') {
+         arr[i] = ''
+         if (arr[i - 1] && arr[i - 1] === arr[i - 1].toLowerCase()) {
+            arr[i - 1] = '';
+            console.log(i);
+         }
+         if (arr[i + 1] && arr[i + 1] === arr[i + 1].toLowerCase()) {
+            arr[i + 1] = ''
+         }
+      }
+   }
+   return arr.join('')
+}
+
+
+// best solution
+function cutCancerCells(organism) {
+   return organism.replace(/c|[a-z]?C[a-z]?/g, '')
+}
+cutCancerCells('CAacbCzvDCoC');
 
