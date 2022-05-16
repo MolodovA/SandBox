@@ -62,7 +62,6 @@ function cutCancerCells(organism) {
          arr[i] = ''
          if (arr[i - 1] && arr[i - 1] === arr[i - 1].toLowerCase()) {
             arr[i - 1] = '';
-            console.log(i);
          }
          if (arr[i + 1] && arr[i + 1] === arr[i + 1].toLowerCase()) {
             arr[i + 1] = ''
@@ -77,5 +76,11 @@ function cutCancerCells(organism) {
 function cutCancerCells(organism) {
    return organism.replace(/c|[a-z]?C[a-z]?/g, '')
 }
-cutCancerCells('CAacbCzvDCoC');
+cutCancerCells('aCCcHCCCaCCaDCCCCCC');
 
+
+function arrayDiff(a, b) {
+   return a.filter(elem => !b.includes(elem))
+}
+
+arrayDiff([1, 2, 2], [2]);
