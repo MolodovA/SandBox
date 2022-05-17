@@ -35,7 +35,7 @@ function dontGiveMeFive(start, end) {
    }
    return arr.length
 }
-console.log(dontGiveMeFive(4, 17));
+dontGiveMeFive(4, 17);
 
 
 function solution(str) {
@@ -84,3 +84,27 @@ function arrayDiff(a, b) {
 }
 
 arrayDiff([1, 2, 2], [2]);
+
+function sumIntervals(intervals) {
+   for (let i = 0; i < intervals.length; i++) {
+      intervals[i]
+      let arr = []
+      for (let h = intervals[i][0]; h < intervals[i][intervals[i].length - 1]; h++) {
+         arr.push(h);
+         arr.length;
+      }
+   }
+}
+sumIntervals([[1, 4], [7, 10], [3, 5]]);
+
+
+const qwe = (a, b) => {
+   if (b !== undefined) return a + b
+   return (c) => a * c
+}
+qwe(5, 0);
+qwe(1)(7);
+
+function reverseWords(str) {
+   return str.split(' ').reverse().join(' ')
+}
