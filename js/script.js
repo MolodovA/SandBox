@@ -108,3 +108,118 @@ qwe(1)(7);
 function reverseWords(str) {
    return str.split(' ').reverse().join(' ')
 }
+
+
+console.log(1);
+
+
+
+
+const arr = [[1], 3, ['4', '8'], [[3, 5]]]
+console.log(arr.flat(2));
+
+
+function bn(x, y) {
+   return y == 1 ? x : x * bn(x, y - 1)
+}
+
+console.log(bn(2, 3))
+
+
+let company = {
+   sales: [{
+      name: 'John',
+      salary: 1000
+   }, {
+      name: 'Alice',
+      salary: 600
+   }],
+
+   development: {
+      sites: [{
+         name: 'Peter',
+         salary: 2000
+      }, {
+         name: 'Alex',
+         salary: 1800
+      }],
+
+      internals: [{
+         name: 'Jack',
+         salary: 1300
+      }]
+   }
+};
+
+function sumSalaries(department) {
+   if (Array.isArray(department)) { // случай (1)
+      return department.reduce((prev, current) => prev + current.salary, 0); // сумма элементов массива
+   } else { // случай (2)
+      let sum = 0;
+      for (let subdep of Object.values(department)) {
+         sum += sumSalaries(subdep); // рекурсивно вызывается для подотделов, суммируя результаты
+      }
+      return sum;
+   }
+}
+console.log(sumSalaries(company));
+
+
+// В массиве найти максимальное число 
+const numbers = [1, 45, 66, 2, 4, 6, -2, -10, -100, 100]
+let max = numbers[0];
+numbers.forEach((item) => {
+   if (item < max) {
+      max = item
+   }
+})
+
+
+/*let courses = [
+   { name: "Courses in England", prices: [0, 100] },
+   { name: "Courses in Germany", prices: [500, null] },
+   { name: "Courses in Italy", prices: [100, 200] },
+   { name: "Courses in Russia", prices: [null, 400] },
+   { name: "Courses in China", prices: [50, 250] },
+   { name: "Courses in USA", prices: [200, null] },
+   { name: "Courses in Kazakhstan", prices: [56, 324] },
+   { name: "Courses in France", prices: [null, null] },
+];*/
+let courses = [
+   { name: "Courses in England", prices: [0, 100] },
+   { name: "Courses in Germany", prices: [500, null] },
+   { name: "Courses in Italy", prices: [100, 200] },
+   { name: "Courses in Russia", prices: [null, 400] },
+   { name: "Courses in China", prices: [50, 250] },
+   { name: "Courses in USA", prices: [200, null] },
+   { name: "Courses in Kazakhstan", prices: [56, 324] },
+   { name: "Courses in France", prices: [null, null] },
+];
+function filterRange(requiredRange) {
+   let res = courses.filter(item => item.prices[0] <= requiredRange[0] && item.prices[1] <= requiredRange[1])
+   return res
+}
+
+console.log(filterRange([null, 200]));
+console.log(filterRange([100, 350]))
+console.log(filterRange([200, null]))
+
+
+
+function sortRange(requiredRange) {
+   let res = courses.filter(item => item.prices[0] <= requiredRange[0] && item.prices[1] <= requiredRange[1])
+   return res
+}
+console.log(sortRange([null, 200]));
+console.log(sortRange([100, 350]))
+console.log(sortRange([200, null]))
+
+function incrementer(nums) {
+   if (!nums) {
+      return []
+   }
+   return nums.map((item, i) => (item + (i + 1)) % 10)
+
+}
+
+incrementer([4, 6, 7, 1, 3])
