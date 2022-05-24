@@ -162,7 +162,7 @@ function sumSalaries(department) {
       return sum;
    }
 }
-console.log(sumSalaries(company));
+sumSalaries(company);
 
 
 // В массиве найти максимальное число 
@@ -173,18 +173,17 @@ numbers.forEach((item) => {
       max = item
    }
 })
+function incrementer(nums) {
+   if (!nums) {
+      return []
+   }
+   return nums.map((item, i) => (item + (i + 1)) % 10)
+
+}
+
+incrementer([4, 6, 7, 1, 3])
 
 
-/*let courses = [
-   { name: "Courses in England", prices: [0, 100] },
-   { name: "Courses in Germany", prices: [500, null] },
-   { name: "Courses in Italy", prices: [100, 200] },
-   { name: "Courses in Russia", prices: [null, 400] },
-   { name: "Courses in China", prices: [50, 250] },
-   { name: "Courses in USA", prices: [200, null] },
-   { name: "Courses in Kazakhstan", prices: [56, 324] },
-   { name: "Courses in France", prices: [null, null] },
-];*/
 let courses = [
    { name: "Courses in England", prices: [0, 100] },
    { name: "Courses in Germany", prices: [500, null] },
@@ -195,31 +194,39 @@ let courses = [
    { name: "Courses in Kazakhstan", prices: [56, 324] },
    { name: "Courses in France", prices: [null, null] },
 ];
+
+
+
 function filterRange(requiredRange) {
-   let res = courses.filter(item => item.prices[0] <= requiredRange[0] && item.prices[1] <= requiredRange[1])
-   return res
+   let [minValue, maxValue] = requiredRange
+
+   return courses.filter(i => {
+      if (maxValue) {
+         return minValue <= i.prices[0] && i.prices[0] <= maxValue && maxValue >= i.prices[1]
+      }
+      return minValue <= i.prices[0]
+   })
 }
 
-console.log(filterRange([null, 200]));
+console.log(filterRange([null, 200]))
 console.log(filterRange([100, 350]))
 console.log(filterRange([200, null]))
 
 
-
-function sortRange(requiredRange) {
-   let res = courses.filter(item => item.prices[0] <= requiredRange[0] && item.prices[1] <= requiredRange[1])
-   return res
-}
-console.log(sortRange([null, 200]));
-console.log(sortRange([100, 350]))
-console.log(sortRange([200, null]))
-
-function incrementer(nums) {
-   if (!nums) {
-      return []
+function sortRange(x) {
+   if (x === 'down') {
+      return [...courses].sort((a, b) => a.prices[0] > b.prices[0] ? 1 : -1)
    }
-   return nums.map((item, i) => (item + (i + 1)) % 10)
+   return [...courses].sort((a, b) => b.prices[0] > a.prices[0] ? 1 : -1)
 
 }
 
-incrementer([4, 6, 7, 1, 3])
+
+
+
+
+
+
+
+
+
