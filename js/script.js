@@ -221,12 +221,34 @@ function sortRange(x) {
 
 }
 
+function getDivisorsCnt(n) {
+   if (n === 1) {
+      return 1
+   }
+   let res = 0
+   for (let i = 0; i <= n; i++) {
+      if (Number.isInteger(n / i)) {
+         res += 1
+      }
+   }
+   return res
+}
+
+
+console.log(getDivisorsCnt(10));
 
 
 
+var twoSum = function (nums, target) {
+   for (let index = 0; index < nums.length; index++) {
+      for (let j = 0; j < nums.length; j++) {
+         if (nums[i] + nums[j] === target) {
+            return [i, j]
+         }
+      }
 
+   }
 
+}
 
-
-
-
+console.log(twoSum([7, 3, 8, 1, 3], 9));
